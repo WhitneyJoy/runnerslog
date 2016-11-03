@@ -12,9 +12,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/WhitneyJoy/runnerslog/issues"
   },
-  "homepage": "https://github.com/WhitneyJoy/runnerslog#readme"
+  "homepage": "https://github.com/WhitneyJoy/runnerslog#readme",
+  "dependencies": {
+    "angular-chart.js": "^1.0.3",
+    "chart.js": "^2.3.0"
+  }
 }
