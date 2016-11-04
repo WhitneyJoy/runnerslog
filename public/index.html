@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script> -->
+    <title>Runner's Log</title>
+  </head>
+  <body>
+<!-- navigation -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">RUNNER'S LOG</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <!-- <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li> -->
+      </ul>
+    </div>
+  </nav>
+
+<!-- weather API display area -->
+<div class="center">
+<!-- search box found from https://blog.udemy.com/search-box-css/ -->
+  <form>
+      <input type="text" ng-model="search" placeholder="Search..." required>
+      <input id="button" type="button" value="Search">
+</form>
+
+</div>
+
+
+<!-- table for runners name, dob, height, weight -->
+
+<!-- <div id="runners">
+
+
+</div> -->
+
+<!-- graph of run -->
+<canvas id="line" class="chart chart-line" chart-data="data"
+chart-labels="labels" chart-series="series" chart-options="options"
+chart-dataset-override="datasetOverride" chart-click="onClick">
+</canvas>
+
+
+<!-- run summaries -->
+<!-- materialize for the dropdown -->
+
+
+  </body>
+</html>
+
+
+<script type="text/javascript" src="../server.js"></script>
+<script type="text/javascript" src="assets/summary.js"></script>
+<script type="text/javascript" src="assets/profile.js"></script>
+<script type="text/javascript" src="assets/chart.js"></script>
+<script type="text/javascript" src="assets/app.js"></script>

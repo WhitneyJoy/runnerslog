@@ -1,0 +1,41 @@
+.nav-wrapper {
+  background-color: grey;
+  padding-left: 20px;
+}
+
+.search {
+  margin:0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+
+
+
+/* found from https://blog.udemy.com/search-box-css/*/
+form {
+                width:500px;
+                margin:50px auto;
+}
+.search {
+                padding:8px 15px;
+                background:rgba(50, 50, 50, 0.2);
+                border:0px solid #dbdbdb;
+}
+.button {
+                position:relative;
+                padding:6px 15px;
+                left:-8px;
+                border:2px solid #207cca;
+                background-color:#207cca;
+                color:#fafafa;
+}
+.button:hover  {
+                background-color:#fafafa;
+                color:#207cca;
+}
+
+/*chart */
+(function (ChartJsProvider) {
+  ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
+});

@@ -1,8 +1,6 @@
 {
   "name": "runnerslog",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +17,9 @@
   "homepage": "https://github.com/WhitneyJoy/runnerslog#readme",
   "dependencies": {
     "angular-chart.js": "^1.0.3",
-    "chart.js": "^2.3.0"
-  }
+    "chart.js": "^2.3.0",
+    "express": "^4.14.0"
+  },
+  "main": "index.js",
+  "description": ""
 }
