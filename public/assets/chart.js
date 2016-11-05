@@ -1,4 +1,4 @@
-angular.module('app', ['chart.js']);
+angular.module('myModule', ['chart.js']);
 
 angular.module("app", ["chart.js"]).controller("LineCtrl", function ($scope) {
 
@@ -31,10 +31,7 @@ angular.module("app", ["chart.js"]).controller("LineCtrl", function ($scope) {
     }
   };
 });
-
-
-
-
+        
 //runners information chart compilation -->
 
 // { meta { timestamp: date,
