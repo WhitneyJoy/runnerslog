@@ -2,11 +2,11 @@ angular.module('myModule', ['chart.js']);
 
 angular.module("app", ["chart.js"]).controller("LineCtrl", function ($scope) {
 
-  $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-  $scope.series = ['Series A', 'Series B'];
+  $scope.labels = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  $scope.series = ['Miles', 'Time'];
   $scope.data = [
-    [65, 59, 80, 81, 56, 55, 40],
-    [28, 48, 40, 19, 86, 27, 90]
+    [5, 3, 6, 4, 4.5, 3.6, 7],
+    [30, 20, 45, 35, 38, 27, 57]
   ];
   $scope.onClick = function (points, evt) {
     console.log(points, evt);
@@ -31,7 +31,7 @@ angular.module("app", ["chart.js"]).controller("LineCtrl", function ($scope) {
     }
   };
 });
-        
+
 //runners information chart compilation -->
 
 // { meta { timestamp: date,
