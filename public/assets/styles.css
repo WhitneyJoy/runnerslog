@@ -9,7 +9,9 @@
   width: 100%;
 }
 
-
+h4 {
+  font-size: 20px;
+}
 
 
 /* found from https://blog.udemy.com/search-box-css/*/

@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="assets/styles.css">
 
     <title>Runner's Log</title>
+    <meta charset="utf-8">
+
   </head>
   <body ng-app="app">
 <!-- navigation -->
@@ -12,9 +14,6 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">RUNNER'S LOG</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <!-- <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li> -->
       </ul>
     </div>
   </nav>
@@ -26,14 +25,37 @@
       <input type="text" ng-model="search" placeholder="Search..." required>
       <input id="button" type="button" value="Search">
   </form>
+  
+
 
 </div>
 
-
 <!-- table for runners name, dob, height, weight -->
-<!-- <div id="runners">
-</div> -->
+<div class="center">
+  <form name="runnerForm">
+    <form name="runnerForm">
+    <label>
+    Name:
+      <input type="text" ng-model="runner.name"/>
+    </label><br>
+    <label>
+    Height:
+      <input type="text" ng-model="runner.age"/>
+    </label><br>
+    <label>
+    Weight:
+      <input type="text" ng-model="runner.weight"/>
+    </label><br>
+    <label>
+    Age:
+      <input type="text" ng-model="runner.age"/>
+    </label><br>
+    <!-- <input type="text" ng-model="search" placeholder="Submit." required> -->
+    <input id="button" type="button" value="Submit">
+  </form>
+</div>
 
+<hr><br><br>
 <!-- graph of run -->
 <div ng-controller="LineCtrl">
 <canvas id="line" class="chart chart-line" chart-data="data"
@@ -41,7 +63,9 @@ chart-labels="labels" chart-series="series" chart-options="options"
 chart-dataset-override="datasetOverride" chart-click="onClick">
 </canvas>
 </div>
+<br><br><hr>
 <!-- run summaries -->
+
 <!-- materialize for the dropdown -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>

@@ -1,4 +1,4 @@
-angular.module('myModule', ['chart.js']);
+// angular.module('myModule', ['chart.js']);
 
 angular.module("app", ["chart.js"]).controller("LineCtrl", function ($scope) {
 
