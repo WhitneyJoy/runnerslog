@@ -2,7 +2,8 @@
   "name": "runnerslog",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,6 @@
     "request": "^2.78.0"
   },
   "main": "index.js",
-  "description": ""
+  "description": "angular project",
+  "devDependencies": {}
 }

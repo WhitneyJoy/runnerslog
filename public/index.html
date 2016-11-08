@@ -10,25 +10,29 @@
   </head>
   <body ng-app="app">
 <!-- navigation -->
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">RUNNER'S LOG</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-      </ul>
-    </div>
-  </nav>
+<!-- Dropdown Structure -->
+
+<div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Runner's Log</a>
+        <ul class="right hide-on-med-and-down">
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div ng-controller="dateCtrl">
+    <select ng-model="selectedDate" ng-options="x for x in dates">
+    </select>
+  </div>
 
 <!-- weather API display area -->
-<div class="center">
 <!-- search box found from https://blog.udemy.com/search-box-css/ -->
-  <form>
+  <!-- <form>
       <input type="text" ng-model="search" placeholder="Search..." required>
       <input id="button" type="button" value="Search">
-  </form>
-  
-
-
-</div>
+  </form> -->
 
 <!-- table for runners name, dob, height, weight -->
 <div class="center">
@@ -51,7 +55,7 @@
       <input type="text" ng-model="runner.age"/>
     </label><br>
     <!-- <input type="text" ng-model="search" placeholder="Submit." required> -->
-    <input id="button" type="button" value="Submit">
+    <input id="button" type="button" value="Save">
   </form>
 </div>
 
@@ -68,10 +72,11 @@ chart-dataset-override="datasetOverride" chart-click="onClick">
 
 <!-- materialize for the dropdown -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
 <script src="../node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
 <script src="assets/chart.js"></script>
 <script src="assets/app.js"></script>
+
 </body>
 </html>

@@ -1,39 +1,64 @@
-runs.json
-
-runs = [
-  {
-  "id": 0,
+var runs = [ {
   "date": "11/1/2016",
-  "miles": 3,
-  "time": 22,
-  "calories": 340,
-  "bpm":
-  should i be putting an average bpm here?
+  "location": {
+    "long" : 5,
+    "lat" : 4
+  },
+  "run":[
+    {"time": 0, "marker": 0, "bpm": 60},
+    {"time": 10, "marker": 1, "bpm": 75},
+    {"time": 15, "marker": 2.5, "bpm": 86},
+    {"time": 20, "marker": 3, "bpm": 82},
+    {"time": 25, "marker": 4.3, "bpm": 84},
+    {"time": 30, "marker": 5.2, "bpm": 89}
+  ]
 },
+
 {
-"id": 1,
-"date": "11/2/2016",
-"miles": 5,
-"time": 35,
-"calories":
-"bpm":
+  "date": "11/2/2016",
+  "location": {
+    "long" : 5,
+    "lat" : 4
+  },
+  "run":[
+    {"time": 0, "marker": 0, "bpm": 63},
+    {"time": 10, "marker": 2, "bpm": 64},
+    {"time": 15, "marker": 3.4, "bpm": 68},
+    {"time": 20, "marker": 4.6, "bpm": 72},
+    {"time": 25, "marker": 5.2, "bpm": 63}
+  ]
 },
+
 {
-"id": 2,
-"date": "11/3/2016",
-"miles": 4.2,
-"time": 25,
-"calories":
-"bpm":
+  "date": "11/3/2016",
+  "location": {
+    "long" : 5,
+    "lat" : 4
+  },
+  "run":[
+    {"time": 0, "marker": 0, "bpm": 60},
+    {"time": 10, "marker": 3, "bpm": 68},
+    {"time": 15, "marker": 3.6, "bpm": 72},
+    {"time": 20, "marker": 4.8, "bpm": 70}
+  ]
 },
+
 {
-"id": 3,
-"date": "11/4/2016",
-"miles": 5.6,
-"time": 38,
-"calories":
-"bpm":
+  "date": "11/4/2016",
+  "location": {
+    "long" : 5,
+    "lat" : 4
+  },
+  "run":[
+    {"time": 0, "marker": 0, "bpm": 60},
+    {"time": 10, "marker": 1, "bpm": 63},
+    {"time": 15, "marker": 2.8, "bpm": 65},
+    {"time": 20, "marker": 4, "bpm": 66},
+    {"time": 25, "marker": 5.2, "bpm": 68},
+    {"time": 30, "marker": 6, "bpm": 70}
+  ]
 },
+
 {
   "date": "11/5/2016",
   "location": {
@@ -41,12 +66,15 @@ runs = [
     "lat" : 4
   },
   "run":[
-    {"time": 0, "marker": 0, "bpm": 60},
-    {"time": 1, "marker": 12, "bpm": 61},
-    {"time": 2, "marker": 28, "bpm": 62},
-    {"time": 3, "marker": 42, "bpm": 64},
-    {"time": 4, "marker": 51, "bpm": 64}
+    {"time": 0, "marker": 0, "bpm": 62},
+    {"time": 10, "marker": 1, "bpm": 64},
+    {"time": 15, "marker": 2.3, "bpm": 68},
+    {"time": 20, "marker": 3, "bpm": 65},
+    {"time": 25, "marker": 4.5, "bpm": 66},
+    {"time": 30, "marker": 5.7, "bpm": 71},
+    {"time": 35, "marker": 6.8, "bpm": 29}
   ]
-},
+}
 ];
-//generate a date object and convert to a string 
+
+//generate a date object and convert to a string

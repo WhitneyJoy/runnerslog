@@ -1,3 +1,30 @@
+var request = require('request');
+var app = express()
+
+app.get('/getWeather', function (req,res) {
+  var request = require('request');
+request('http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=6d534f8ba8079ed126e70eebeaab328b', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    req.body
+  } else {
+    console.log(error);
+  }
+});
+})
+
+// app.get("/weather...")
+// var data,
+// request(...),
+// resp.send(data),
+// }
+
+
+var fs = require('fs');
+fs
+var obj = require("runners.json");
+//editable runner content
+// var config = require('./runners.json');
+// console.log(config.firstName + ' ' + config.lastName);
 
 
 // function getWeather() {

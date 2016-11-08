@@ -2,7 +2,7 @@
 
 angular.module("app", ["chart.js"]).controller("LineCtrl", function ($scope) {
 
-  $scope.labels = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  $scope.labels = ["1 mile", "2 miles", "3 miles", "4 miles", "5 miles", "6 miles", "7 miles"];
   $scope.series = ['Miles', 'Time'];
   $scope.data = [
     [5, 3, 6, 4, 4.5, 3.6, 7],
