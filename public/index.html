@@ -1,27 +1,14 @@
 <!doctype html>
-<html>
+<html ng-app="app">
   <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link rel="stylesheet" href="assets/styles.css">
-
     <title>Runner's Log</title>
-    <meta charset="utf-8">
+
 
   </head>
 
-  <body ng-app="app">
-
-  <div ng-controller="FormController">
-    <table border=1>
-      <tr ng-repeat="data in myData">
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-  </div>
-
-<!-- navigation -->
-<!-- Dropdown Structure -->
+  <body>
 
 <div class="navbar-fixed">
     <nav>
@@ -33,10 +20,6 @@
     </nav>
   </div>
 
-  <!-- <div ng-controller="dateCtrl">
-    <select ng-model="selectedDate" ng-options="x for x in dates">
-    </select>
-  </div> -->
 
 <!-- weather API display area -->
 <!-- search box found from https://blog.udemy.com/search-box-css/ -->
@@ -71,6 +54,9 @@
   </form>
 </div>
 
+
+
+
 <hr><br><br>
 <!-- graph of run -->
 <div ng-controller="LineCtrl">
@@ -84,8 +70,8 @@ chart-dataset-override="datasetOverride" chart-click="onClick">
 
 <!-- materialize for the dropdown -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
 <script src="../node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
 <script src="assets/chart.js"></script>

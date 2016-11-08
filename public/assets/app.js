@@ -1,5 +1,3 @@
-
-
 //editable form of runner's information
 (function() {
 angular.module('editableform', [])
@@ -14,14 +12,18 @@ angular.module('editableform', [])
 
 //dropdown
 // var app = angular.module('app', []);
-// app.controller('dateCtrl', function($scope) {
-//     $scope.names = ["Date", "Date", "Date"];
+// app.controller('myCtrl', function($scope) {
+//     $scope.cars = {
+//         car01 : {brand : "Ford", model : "Mustang", color : "red"},
+//         car02 : {brand : "Fiat", model : "500", color : "white"},
+//         car03 : {brand : "Volvo", model : "XC90", color : "black"}
+//     }
 // });
 
 //runners json information to display
-myApp=angular.module('app', [])
-app.controller('FormController', function($scope,$http){
-  $http.get('runners.json').success(function($data){
-    $scope.myData = response;
-  });
-});
+// myApp=angular.module('app', [])
+// app.controller('FormController', function($scope,$http){
+//   $http.get('runners.json').success(function($data){
+//     $scope.myData = response;
+//   });
+// });
