@@ -8,7 +8,18 @@
     <meta charset="utf-8">
 
   </head>
+
   <body ng-app="app">
+
+  <div ng-controller="FormController">
+    <table border=1>
+      <tr ng-repeat="data in myData">
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
 <!-- navigation -->
 <!-- Dropdown Structure -->
 
@@ -22,10 +33,10 @@
     </nav>
   </div>
 
-  <div ng-controller="dateCtrl">
+  <!-- <div ng-controller="dateCtrl">
     <select ng-model="selectedDate" ng-options="x for x in dates">
     </select>
-  </div>
+  </div> -->
 
 <!-- weather API display area -->
 <!-- search box found from https://blog.udemy.com/search-box-css/ -->
@@ -33,6 +44,7 @@
       <input type="text" ng-model="search" placeholder="Search..." required>
       <input id="button" type="button" value="Search">
   </form> -->
+
 
 <!-- table for runners name, dob, height, weight -->
 <div class="center">
@@ -73,6 +85,7 @@ chart-dataset-override="datasetOverride" chart-click="onClick">
 <!-- materialize for the dropdown -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
 <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
 <script src="../node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
 <script src="assets/chart.js"></script>
