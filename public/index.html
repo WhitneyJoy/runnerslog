@@ -4,12 +4,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link rel="stylesheet" href="assets/styles.css">
     <title>Runner's Log</title>
-
-
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
   </head>
 
   <body>
-
 <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
@@ -67,12 +70,14 @@ chart-dataset-override="datasetOverride" chart-click="onClick">
 </div>
 <br><br><hr>
 <!-- run summaries -->
-
+<div id="map"></div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="node_modules/chart.js/dist/Chart.min.js"></script>
 <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbF_Ks_M7e-W03AAc_MR5GAU-um4BkjHA&callback=initMap">
+    </script>
 <script src="assets/app.js"></script>
 
 </body>

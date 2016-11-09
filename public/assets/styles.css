@@ -13,7 +13,12 @@ h4 {
   font-size: 20px;
 }
 
-
+/*#image {
+  background: url('runner.jpg');
+  max-width: 100%;
+  min-height: 200px;
+  background-size: cover;
+}*/
 /* found from https://blog.udemy.com/search-box-css/*/
 form {
                 width:500px;
