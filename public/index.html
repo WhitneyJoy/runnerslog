@@ -67,26 +67,12 @@ chart-dataset-override="datasetOverride" chart-click="onClick">
 </div>
 <br><br><hr>
 <!-- run summaries -->
-<div ng-controller="myCtrl">
-
-  <p>Select a car:</p>
-
-  <select ng-model="selectedCar" ng-options="y.brand for (x, y) in cars">
-  </select>
-
-  <h1>You selected: {{selectedCar.brand}}</h1>
-  <h2>Model: {{selectedCar.model}}</h2>
-  <h3>Color: {{selectedCar.color}}</h3>
-
-  <p>The visible text inside the dropdown list can also be a property of the value object.</p>
-
-  </div>
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="../node_modules/chart.js/dist/Chart.min.js"></script>
-<script src="../node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+<script src="node_modules/chart.js/dist/Chart.min.js"></script>
+<script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
 <script src="assets/app.js"></script>
 
 </body>

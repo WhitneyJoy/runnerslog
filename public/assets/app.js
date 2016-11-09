@@ -1,34 +1,14 @@
-//editable form of runner's information
-(function() {
-angular.module('editableform', [])
-  .controller('FormController', ['$scope', function($scope) {
-    $scope.user = { name: '', height: '', weight:'', age: ''};
-  }]);
-})
-
-
-//weather
-
 
 //dropdown
-var app = angular.module('app', []);
-app.controller('myCtrl', function($scope) {
-    $scope.cars = {
-        car01 : {brand : "Ford", model : "Mustang", color : "red"},
-        car02 : {brand : "Fiat", model : "500", color : "white"},
-        car03 : {brand : "Volvo", model : "XC90", color : "black"}
-    }
-});
+var app = angular.module('app', ["chart.js"]);
 
-//runners json information to display
-// myApp=angular.module('app', [])
-// app.controller('FormController', function($scope,$http){
-//   $http.get('runners.json').success(function($data){
-//     $scope.myData = response;
-//   });
-// });
+//runners information
+// var runners = JSON.stringify(runners);
+// document.body.innerHTML = runners;
+
+
 //chart
-angular.module("app", ["chart.js"]).controller("LineCtrl", function ($scope) {
+app.controller("LineCtrl", function ($scope) {
 
   $scope.labels = ["1 mile", "2 miles", "3 miles", "4 miles", "5 miles", "6 miles", "7 miles"];
   $scope.series = ['Miles', 'Time'];

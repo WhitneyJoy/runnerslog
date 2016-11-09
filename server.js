@@ -1,8 +1,10 @@
 var request = require('request');
 var express = require("express");
 var app = express();
+var fs = require('fs');
 
-app.use(express.static('public'))
+app.use(express.static('public'));
+
 
 app.get('/getWeather', function (req,res) {
   var request = require('request');
@@ -15,11 +17,15 @@ request('http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=6d
 });
 })
 
-// app.get("/weather...")
-// var data,
-// request(...),
-// resp.send(data),
-// }
+
+
+var runs = require("./runs.json");
+console.log(runs);
+
+
+var runners = require("./runners.json");
+console.log(runners);
+
 
 
 // var fs = require('fs');
@@ -60,30 +66,6 @@ request('http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=6d
 //search for weather API
 //fs for runner and request (download) for runs
 //dropdown should use ng-modal to make it dynamic
-
-//runners information chart compilation -->
-
-// { meta { timestamp: date,
-//          location: {
-//            long: #;
-//            lat: #}
-//         },
-// data: [{
-//         timestamp: date,
-//         location: {long: #, lat: #}
-//         elevation: #,
-//         heartrate: #,
-//       },
-//       ...include more objects and use for loop to create a new timestamp every ten seconds (i * 10)
-//     ],
-// runner: {
-//   dob:
-//   height:
-//   weight:
-// }
-// }
-
-
 
 
 app.listen(3000, function () {
