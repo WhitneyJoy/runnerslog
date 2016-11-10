@@ -1,10 +1,6 @@
-
-//dropdown
 var app = angular.module('app', ["chart.js"]);
 
-//runners information
-// var runners = JSON.stringify(runners);
-// document.body.innerHTML = runners;
+//printing JSON run information
 
 
 //chart
@@ -40,7 +36,32 @@ app.controller("LineCtrl", function ($scope) {
   };
 });
 
-//google maps API
+
+//weather
+app.controller('DemoCtrl', function($http) {
+
+  var wc = this;
+  var URL = 'http://api.openweathermap.org/data/2.5/forecast/daily';
+  var request = {
+    method: 'GET',
+    url: URL,
+    params: {
+       q: 'KansasCity',
+      mode: 'json',
+      appid: '6d534f8ba8079ed126e70eebeaab328b'
+    }
+  };
+
+  $http(request)
+    .then(function(response) {
+      wc.data = response.data;
+    }).
+    catch(function(response) {
+      wc.data = response.data;
+    });
+});
+
+//google maps API and key found at https://console.developers.google.com/apis/credentials?project=valid-pagoda-149019
 function initMap() {
         var uluru = {lat: -25.363, lng: 131.044};
         var map = new google.maps.Map(document.getElementById('map'), {

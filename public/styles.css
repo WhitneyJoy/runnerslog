@@ -9,9 +9,15 @@
   width: 100%;
 }
 
+h1 {
+  font-size: 15px;
+}
+
 h4 {
   font-size: 20px;
 }
+
+
 
 /*#image {
   background: url('runner.jpg');

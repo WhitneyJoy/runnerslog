@@ -2,26 +2,12 @@ var request = require('request');
 var express = require("express");
 var app = express();
 var fs = require('fs');
+var http = require('http');
 
 app.use(express.static('public'));
 
-
-app.get('/getWeather', function (req,res) {
-  var request = require('request');
-request('http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=6d534f8ba8079ed126e70eebeaab328b', function (error, response, body) {
-  if (!error && response.statusCode == 200) {
-    req.body
-  } else {
-    console.log(error);
-  }
-});
-})
-
-
-
 var runs = require("./runs.json");
 console.log(runs);
-
 
 var runners = require("./runners.json");
 console.log(runners);

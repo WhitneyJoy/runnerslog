@@ -2,12 +2,13 @@
 <html ng-app="app">
   <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Runner's Log</title>
+
     <style>
        #map {
-        height: 400px;
-        width: 100%;
+        height: 300px;
+        width: 50%;
        }
     </style>
   </head>
@@ -24,13 +25,17 @@
   </div>
 
 
+
 <!-- weather API display area -->
 <!-- search box found from https://blog.udemy.com/search-box-css/ -->
   <!-- <form>
       <input type="text" ng-model="search" placeholder="Search..." required>
       <input id="button" type="button" value="Search">
   </form> -->
-
+<div ng-controller="DemoCtrl as wc">
+      <h1>{{ wc.data | json }}</h1>
+</div>
+<!-- <i class="wi wi-night-sleet"></i> -->
 
 <!-- table for runners name, dob, height, weight -->
 <div class="center">
@@ -58,8 +63,6 @@
 </div>
 
 
-
-
 <hr><br><br>
 <!-- graph of run -->
 <div ng-controller="LineCtrl">
@@ -68,17 +71,27 @@ chart-labels="labels" chart-series="series" chart-options="options"
 chart-dataset-override="datasetOverride" chart-click="onClick">
 </canvas>
 </div>
-<br><br><hr>
-<!-- run summaries -->
+<br><hr><br>
+
+<!-- run summaries with map-->
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Summaries</a>
+    <ul class="right hide-on-med-and-down">
+    </ul>
+  </div>
+</nav>
 <div id="map"></div>
+<br>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
 <script src="node_modules/chart.js/dist/Chart.min.js"></script>
 <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbF_Ks_M7e-W03AAc_MR5GAU-um4BkjHA&callback=initMap">
     </script>
-<script src="assets/app.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>
