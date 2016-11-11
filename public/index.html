@@ -12,32 +12,42 @@
        }
     </style>
   </head>
-
   <body>
-<div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Runner's Log</a>
+        <a href="#!" class="brand-logo">LOG YOUR RUN</a>
         <ul class="right hide-on-med-and-down">
         </ul>
       </div>
     </nav>
-  </div>
+<div class="main-header" role="banner"></div>
 
 
 
 <!-- weather API display area -->
-<!-- search box found from https://blog.udemy.com/search-box-css/ -->
-  <!-- <form>
-      <input type="text" ng-model="search" placeholder="Search..." required>
-      <input id="button" type="button" value="Search">
-  </form> -->
-<div ng-controller="DemoCtrl as wc">
-      <h1>{{ wc.data | json }}</h1>
-</div>
-<!-- <i class="wi wi-night-sleet"></i> -->
+<br>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">WEATHER</a>
+    <ul class="right hide-on-med-and-down">
+    </ul>
+  </div>
+</nav>
+
+<center><div ng-controller="DemoCtrl as wc">
+      <h1>{{ wc.data.list | json }}</h1>
+</div></center>
+
 
 <!-- table for runners name, dob, height, weight -->
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">RUNNER</a>
+    <ul class="right hide-on-med-and-down">
+    </ul>
+  </div>
+</nav>
+
 <div class="center">
   <form name="runnerForm">
     <form name="runnerForm">
@@ -47,7 +57,7 @@
     </label><br>
     <label>
     Height:
-      <input type="text" ng-model="runner.age"/>
+      <input type="text" ng-model="runner.height"/>
     </label><br>
     <label>
     Weight:
@@ -60,38 +70,62 @@
     <!-- <input type="text" ng-model="search" placeholder="Submit." required> -->
     <input id="button" type="button" value="Save">
   </form>
+  <center><div ng-controller="RunnerCtrl">
+     <p>{{name}}</p></div></center>
+</div><br>
+
+
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">OVERVIEW</a>
+    <ul class="right hide-on-med-and-down">
+    </ul>
+  </div>
+</nav><br>
+
+<div ng-controller="RunCtrl">
+<select ng-model="selectedDate" ng-options="x for x in date"></select>
 </div>
 
-
-<hr><br><br>
 <!-- graph of run -->
-<div ng-controller="LineCtrl">
+<div id="myChart" ng-controller="LineCtrl">
 <canvas id="line" class="chart chart-line" chart-data="data"
 chart-labels="labels" chart-series="series" chart-options="options"
 chart-dataset-override="datasetOverride" chart-click="onClick">
 </canvas>
-</div>
-<br><hr><br>
+</div><br>
 
 <!-- run summaries with map-->
+
 <nav>
   <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">Summaries</a>
+    <a href="#!" class="brand-logo">SUMMARIES</a>
     <ul class="right hide-on-med-and-down">
     </ul>
   </div>
 </nav>
+<div ng-controller="RunCtrl">
+   <p>{{data| prettyJSON}}</p>
+</div>
+
 <div id="map"></div>
 <br>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo"></a>
+    <ul class="right hide-on-med-and-down">
+    </ul>
+  </div>
+</nav>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
 <script src="node_modules/chart.js/dist/Chart.min.js"></script>
 <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbF_Ks_M7e-W03AAc_MR5GAU-um4BkjHA&callback=initMap">
     </script>
-<script src="app.js"></script>
 
+<script>document.write('<base href="' + document.location + '" />');</script>
+<script src="app.js"></script>
 </body>
 </html>

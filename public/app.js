@@ -1,6 +1,19 @@
 var app = angular.module('app', ["chart.js"]);
 
-//printing JSON run information
+// printing JSON runner information
+app.controller('RunnerCtrl', function($scope, $http) {
+  $http.get('runners.json').success(function(data) {
+    $scope.name = data;
+  });
+});
+
+//printin JSON run information
+app.controller('RunCtrl', function($scope, $http) {
+  $http.get('runs.json').success(function(data) {
+    $scope.data = data;
+  });
+});
+
 
 
 //chart
@@ -36,17 +49,15 @@ app.controller("LineCtrl", function ($scope) {
   };
 });
 
-
 //weather
 app.controller('DemoCtrl', function($http) {
-
   var wc = this;
   var URL = 'http://api.openweathermap.org/data/2.5/forecast/daily';
   var request = {
     method: 'GET',
     url: URL,
     params: {
-       q: 'KansasCity',
+       q: 'Milwaukee',
       mode: 'json',
       appid: '6d534f8ba8079ed126e70eebeaab328b'
     }
@@ -61,9 +72,12 @@ app.controller('DemoCtrl', function($http) {
     });
 });
 
+//printing phones to the page
+
+
 //google maps API and key found at https://console.developers.google.com/apis/credentials?project=valid-pagoda-149019
 function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
+        var uluru = {lat:43.0731, lng:89.4012};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: uluru
@@ -73,3 +87,10 @@ function initMap() {
           map: map
         });
       }
+
+app.filter('prettyJSON', function () {
+  function prettyPrintJson(json) {
+      return JSON ? JSON.stringify(json, null, '  ') : 'your browser doesnt support JSON so cant pretty print';
+  }
+      return prettyPrintJson;
+});
