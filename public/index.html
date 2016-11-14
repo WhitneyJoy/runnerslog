@@ -34,8 +34,16 @@
   </div>
 </nav>
 
-<center><div ng-controller="DemoCtrl as wc">
-      <h1>{{ wc.data.list | json }}</h1>
+<center><div ng-controller="DemoCtrl">
+      <h1>Type the Name of Your City</h1>
+      <input ng-model="usersCity"/>
+      <button ng-click="searchCity()">Submit</button>
+      <h1>Your City: {{city}}</h1>
+      <h1>Day One <br> Temp: {{dayOneTemp}} <br> Forecast: {{dayOneForecast}} </h1>
+      <h1>Day Two <br> Temp: {{dayTwoTemp}} <br> Forecast: {{dayTwoForecast}} </h1>
+      <h1>Day Three <br> Temp: {{dayThreeTemp}} <br> Forecast: {{dayThreeForecast}} </h1>
+      <h1>Day Four <br> Temp: {{dayFourTemp}} <br> Forecast: {{dayFourForecast}} </h1>
+      <h1>Day Five <br> Temp: {{dayFiveTemp}} <br> Forecast: {{dayFiveForecast}} </h1>
 </div></center>
 
 
@@ -48,32 +56,30 @@
   </div>
 </nav>
 
-<div class="center">
-  <form name="runnerForm">
-    <form name="runnerForm">
-    <label>
-    Name:
-      <input type="text" ng-model="runner.name"/>
-    </label><br>
-    <label>
-    Height:
-      <input type="text" ng-model="runner.height"/>
-    </label><br>
-    <label>
-    Weight:
-      <input type="text" ng-model="runner.weight"/>
-    </label><br>
-    <label>
-    Age:
-      <input type="text" ng-model="runner.age"/>
-    </label><br>
-    <!-- <input type="text" ng-model="search" placeholder="Submit." required> -->
-    <input id="button" type="button" value="Save">
-  </form>
-  <center><div ng-controller="RunnerCtrl">
-     <p>{{name}}</p></div></center>
-</div><br>
+<div ng-controller="UserInputCtrl">
 
+<table>
+<tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Height</th>
+    <th>Weight (lbs)</th>
+</tr>
+<tr>
+  <th><input ng-model="userName"/></th>
+  <th><input ng-model="userAge"/></th>
+  <th><input ng-model="userHeight"/></th>
+  <th><input ng-model="userWeight"/></th>
+</tr>
+<tr>
+    <td>{{name}}</td>
+    <td>{{age}}</td>
+    <td>{{height}}</td>
+    <td>{{weight}}</td>
+</tr>
+</table>
+<center><button ng-click="changeUserData()">submit</button></center>
+</div>
 
 <nav>
   <div class="nav-wrapper">
@@ -96,7 +102,6 @@ chart-dataset-override="datasetOverride" chart-click="onClick">
 </div><br>
 
 <!-- run summaries with map-->
-
 <nav>
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo">SUMMARIES</a>
@@ -105,7 +110,37 @@ chart-dataset-override="datasetOverride" chart-click="onClick">
   </div>
 </nav>
 <div ng-controller="RunCtrl">
-   <p>{{data| prettyJSON}}</p>
+   <h1>Run One</h1>
+   <h10>Date: {{runOneDate}}</h10>
+   <h10>Time: {{runOneTime}} minutes.</h10>
+   <h10>Distance: {{runOneDistance}} miles.</h10>
+   <h10>Average BPM: {{runOneBpm}}</h10>
+   <hr>
+   <h1>Run Two</h1>
+   <h10>Date: {{runTwoDate}}</h10>
+   <h10>Time: {{runTwoTime}} minutes.</h10>
+   <h10>Distance: {{runTwoDistance}} miles.</h10>
+   <h10>Average BPM: {{runTwoBpm}}</h10>
+   <hr>
+   <h1>Run Three</h1>
+   <h10>Date: {{runThreeDate}}</h10>
+   <h10>Time: {{runThreeTime}} minutes.</h10>
+   <h10>Distance: {{runThreeDistance}} miles.</h10>
+   <h10>Average BPM: {{runThreeBpm}}</h10>
+   <hr>
+   <h1>Run Four</h1>
+   <h10>Date: {{runFourDate}}</h10>
+   <h10>Time: {{runFourTime}} minutes.</h10>
+   <h10>Distance: {{runFourDistance}} miles.</h10>
+   <h10>Average BPM: {{runFourBpm}}</h10>
+   <hr>
+   <h1>Run Five</h1>
+   <h10>Date: {{runFiveDate}}</h10>
+   <h10>Time: {{runFiveTime}} minutes.</h10>
+   <h10>Distance: {{runFiveDistance}} miles.</h10>
+   <h10>Average BPM: {{runFiveBpm}}</h10>
+   <hr>
+
 </div>
 
 <div id="map"></div>
@@ -117,7 +152,6 @@ chart-dataset-override="datasetOverride" chart-click="onClick">
     </ul>
   </div>
 </nav>
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="node_modules/chart.js/dist/Chart.min.js"></script>

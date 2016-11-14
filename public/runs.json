@@ -25,9 +25,9 @@
  			"marker": 4.3,
  			"bpm": 84
  		}, {
- 			"time": 30,
- 			"marker": 5.2,
- 			"bpm": 89
+ 			"timesix": 30,
+ 			"markersix": 5.2,
+ 			"bpmsix": 89
  		}]
  	},
 
@@ -54,9 +54,9 @@
  			"marker": 4.6,
  			"bpm": 72
  		}, {
- 			"time": 25,
- 			"marker": 5.2,
- 			"bpm": 63
+ 			"timefive": 25,
+ 			"markerfive": 5.2,
+ 			"bpmfive": 63
  		}]
  	},
 
@@ -79,9 +79,9 @@
  			"marker": 3.6,
  			"bpm": 72
  		}, {
- 			"time": 20,
- 			"marker": 4.8,
- 			"bpm": 70
+ 			"timefour": 20,
+ 			"markerfour": 4.8,
+ 			"bpmfour": 70
  		}]
  	},
 
@@ -112,9 +112,9 @@
  			"marker": 5.2,
  			"bpm": 68
  		}, {
- 			"time": 30,
- 			"marker": 6,
- 			"bpm": 70
+ 			"timethree": 30,
+ 			"markerthree": 6,
+ 			"bpmthree": 70
  		}]
  	},
 
@@ -149,10 +149,9 @@
  			"marker": 5.7,
  			"bpm": 71
  		}, {
- 			"time": 35,
- 			"marker": 6.8,
- 			"bpm": 29
+ 			"timetwo": 35,
+ 			"markertwo": 6.8,
+ 			"bpmtwo": 29
  		}]
  	}
  ]
- 

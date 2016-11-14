@@ -1,16 +1,68 @@
 var app = angular.module('app', ["chart.js"]);
 
 // printing JSON runner information
-app.controller('RunnerCtrl', function($scope, $http) {
-  $http.get('runners.json').success(function(data) {
-    $scope.name = data;
-  });
-});
+// app.controller('RunnerCtrl', function($scope, $http) {
+//   $http({
+//     method:'GET',
+//     url:'runners.json'
+//   }).then(function successCallback(response){
+//     $scope.name = response.data[0].name;
+//     $scope.age = response.data[0].age;
+//     $scope.height = response.data[0].height;
+//     $scope.weight = response.data[0].weight;
+//   }, function errorCallback(response){
+//     console.log('An error occurred.');
+//   })
+// });
 
+app.controller('UserInputCtrl', function($scope, $http, $httpParamSerializerJQLike){
+    $scope.userName = "";
+    $scope.userAge = "";
+    $scope.userHeight = "";
+    $scope.userWeight = "";
+    $scope.changeUserData = function() {
+      var userData = {
+          json: JSON.stringify({
+          name: $scope.userName,
+          age: $scope.userAge,
+          height: $scope.userHeight,
+          weight: $scope.userWeight
+        })};
+      $http({
+        url: '/runners.json',
+        method: 'POST',
+        data: $httpParamSerializerJQLike(userData),
+      }).then(function successCallback(response, status){
+        $scope.name = data[0].name;
+        $scope.age = data[0].age;
+        $scope.height = data[0].height;
+        $scope.weight = data[0].weight;
+      })
+    }
+})
 //printin JSON run information
 app.controller('RunCtrl', function($scope, $http) {
   $http.get('runs.json').success(function(data) {
-    $scope.data = data;
+    $scope.runOneDate = data[0].date;
+    $scope.runTwoDate = data[1].date;
+    $scope.runThreeDate = data[2].date;
+    $scope.runFourDate = data[3].date;
+    $scope.runFiveDate = data[4].date;
+    $scope.runOneTime = data[0].run[5].timesix;
+    $scope.runOneDistance = data[0].run[5].markersix;
+    $scope.runOneBpm = data[0].run[5].bpmsix;
+    $scope.runTwoTime = data[1].run[4].timefive;
+    $scope.runTwoDistance = data[1].run[4].markerfive;
+    $scope.runTwoBpm = data[1].run[4].bpmfive;
+    $scope.runThreeTime = data[2].run[3].timefour;
+    $scope.runThreeDistance = data[2].run[3].markerfour;
+    $scope.runThreeBpm = data[2].run[3].bpmfour;
+    $scope.runFourTime = data[3].run[5].timethree;
+    $scope.runFourDistance = data[3].run[5].markerthree;
+    $scope.runFourBpm = data[3].run[5].bpmthree;
+    $scope.runFiveTime = data[4].run[6].timetwo;
+    $scope.runFiveDistance = data[4].run[6].markertwo;
+    $scope.runFiveBpm = data[4].run[6].bpmtwo;
   });
 });
 
@@ -50,29 +102,38 @@ app.controller("LineCtrl", function ($scope) {
 });
 
 //weather
-app.controller('DemoCtrl', function($http) {
-  var wc = this;
-  var URL = 'http://api.openweathermap.org/data/2.5/forecast/daily';
-  var request = {
-    method: 'GET',
-    url: URL,
-    params: {
-       q: 'Milwaukee',
-      mode: 'json',
-      appid: '6d534f8ba8079ed126e70eebeaab328b'
-    }
-  };
+app.controller('DemoCtrl', function($http, $scope) {
+  $scope.searchCity = function(){
+    var city = $scope.usersCity;
+    var URL = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + ',us&units=imperial';
+    var request = {
+      method: 'GET',
+      url: URL,
+      params: {
+        appid: '6d534f8ba8079ed126e70eebeaab328b'
+      }
+    };
 
-  $http(request)
-    .then(function(response) {
-      wc.data = response.data;
-    }).
-    catch(function(response) {
-      wc.data = response.data;
-    });
+    $http(request)
+      .then(function(response) {
+         console.log(response.data);
+         $scope.city = response.data.city.name;
+         $scope.dayOneTemp = response.data.list[4].main.temp;
+         $scope.dayTwoTemp = response.data.list[12].main.temp;
+         $scope.dayThreeTemp = response.data.list[20].main.temp;
+         $scope.dayFourTemp = response.data.list[28].main.temp;
+         $scope.dayFiveTemp = response.data.list[36].main.temp;
+         $scope.dayOneForecast = response.data.list[4].weather[0].description;
+         $scope.dayTwoForecast = response.data.list[12].weather[0].description;
+         $scope.dayThreeForecast = response.data.list[20].weather[0].description;
+         $scope.dayFourForecast = response.data.list[28].weather[0].description;
+         $scope.dayFiveForecast = response.data.list[36].weather[0].description;
+      }).
+      catch(function(response) {
+        // wc.data = response.data;
+      });
+  }
 });
-
-//printing phones to the page
 
 
 //google maps API and key found at https://console.developers.google.com/apis/credentials?project=valid-pagoda-149019
@@ -88,6 +149,7 @@ function initMap() {
         });
       }
 
+//pretty printing JSON
 app.filter('prettyJSON', function () {
   function prettyPrintJson(json) {
       return JSON ? JSON.stringify(json, null, '  ') : 'your browser doesnt support JSON so cant pretty print';

@@ -24,20 +24,25 @@ body {
 }
 
 .main-header {
-  background:url('runner.jpg');
-  text-align: center;
+  background-image:url('runner.jpg');
+  /*text-align: center;*/
   min-height: 450px;
   max-width: 100%;
   size: cover;
   background-repeat: no-repeat;
+  position: 50% 50%;
 }
 
-/*#image {
-  background: url('runner.jpg');
-  max-width: 100%;
-  min-height: 200px;
-  background-size: cover;
-}*/
+table {
+  border: 1px solid #666;
+    width: 100%;
+}
+th {
+  background: #f8f8f8;
+  font-weight: bold;
+    padding: 2px;
+}
+
 /* found from https://blog.udemy.com/search-box-css/*/
 form {
                 width:500px;
