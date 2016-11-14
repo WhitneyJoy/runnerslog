@@ -4,7 +4,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link rel="stylesheet" href="styles.css">
     <title>Runner's Log</title>
-
     <style>
        #map {
         height: 300px;
@@ -22,8 +21,6 @@
     </nav>
 <div class="main-header" role="banner"></div>
 
-
-
 <!-- weather API display area -->
 <br>
 <nav>
@@ -38,16 +35,20 @@
       <h1>Type the Name of Your City</h1>
       <input ng-model="usersCity"/>
       <button ng-click="searchCity()">Submit</button>
-      <h1>Your City: {{city}}</h1>
+      <h1>{{city}}</h1>
       <h1>Day One <br> Temp: {{dayOneTemp}} <br> Forecast: {{dayOneForecast}} </h1>
+      <hr>
       <h1>Day Two <br> Temp: {{dayTwoTemp}} <br> Forecast: {{dayTwoForecast}} </h1>
+      <hr>
       <h1>Day Three <br> Temp: {{dayThreeTemp}} <br> Forecast: {{dayThreeForecast}} </h1>
+      <hr>
       <h1>Day Four <br> Temp: {{dayFourTemp}} <br> Forecast: {{dayFourForecast}} </h1>
+      <hr>
       <h1>Day Five <br> Temp: {{dayFiveTemp}} <br> Forecast: {{dayFiveForecast}} </h1>
-</div></center>
+      <hr>
+</div></center><br>
 
-
-<!-- table for runners name, dob, height, weight -->
+<!-- runners name, age, height, weight -->
 <nav>
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo">RUNNER</a>
@@ -56,7 +57,7 @@
   </div>
 </nav>
 
-<div ng-controller="UserInputCtrl">
+<div ng-controller="RunnerCtrl">
 
 <table>
 <tr>
@@ -79,7 +80,18 @@
 </tr>
 </table>
 <center><button ng-click="changeUserData()">submit</button></center>
-</div>
+</div><br>
+
+<!--editable data found at http://plnkr.co/edit/EsW7mV?p=preview -->
+<!-- <div ng-controller="EditCtrl">
+<h1></h1>
+  <p>Click to edit your information.</p>
+  </p>
+  <ul>
+    <li ng-repeat="todo in todos" inline-edit="todo.title" on-save="updateTodo(todo.title)" on-cancel="cancelEdit(todo.title)"></li>
+  </ul>
+  <div>{{todos}}</div>
+</div> -->
 
 <nav>
   <div class="nav-wrapper">
@@ -140,7 +152,6 @@ chart-dataset-override="datasetOverride" chart-click="onClick">
    <h10>Distance: {{runFiveDistance}} miles.</h10>
    <h10>Average BPM: {{runFiveBpm}}</h10>
    <hr>
-
 </div>
 
 <div id="map"></div>

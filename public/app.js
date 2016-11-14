@@ -1,45 +1,115 @@
 var app = angular.module('app', ["chart.js"]);
 
 // printing JSON runner information
-// app.controller('RunnerCtrl', function($scope, $http) {
-//   $http({
-//     method:'GET',
-//     url:'runners.json'
-//   }).then(function successCallback(response){
-//     $scope.name = response.data[0].name;
-//     $scope.age = response.data[0].age;
-//     $scope.height = response.data[0].height;
-//     $scope.weight = response.data[0].weight;
-//   }, function errorCallback(response){
-//     console.log('An error occurred.');
-//   })
+app.controller('RunnerCtrl', function($scope, $http) {
+  $http({
+    method:'GET',
+    url:'runners.json'
+  }).then(function successCallback(response){
+    $scope.name = response.data[0].name;
+    $scope.age = response.data[0].age;
+    $scope.height = response.data[0].height;
+    $scope.weight = response.data[0].weight;
+  }, function errorCallback(response){
+    console.log('An error occurred.');
+  })
+});
+
+
+// Inline edit directive found at http://plnkr.co/edit/EsW7mV?p=preview
+// app.controller('EditCtrl', function($scope) {
+//
+//   $scope.updateTodo = function(value) {
+//     console.log('Saving title ' + value);
+//   };
+//
+//   $scope.cancelEdit = function(value) {
+//     console.log('Canceled editing', value);
+//   };
+//
+//   $scope.todos = [
+//     {id:123, title: 'Lord of the things'},
+//     {id:321, title: 'Hoovering heights'},
+//     {id:231, title: 'Watership brown'}
+//   ];
+// });
+//
+// // On enter event
+// app.directive('onEnter', function() {
+//   return function(scope, elm, attr) {
+//     elm.bind('keypress', function(e) {
+//       if (e.keyCode === 13) {
+//         scope.$apply(attr.onEnter);
+//       }
+//     });
+//   };
+// });
+//
+// // Inline edit directive
+// app.directive('inlineEdit', function($timeout) {
+//   return {
+//     scope: {
+//       model: '=inlineEdit',
+//       handleSave: '&onSave',
+//       handleCancel: '&onCancel'
+//     },
+//     link: function(scope, elm, attr) {
+//       var previousValue;
+//
+//       scope.edit = function() {
+//         scope.editMode = true;
+//         previousValue = scope.model;
+//
+//         $timeout(function() {
+//           elm.find('input')[0].focus();
+//         }, 0, false);
+//       };
+//       scope.save = function() {
+//         scope.editMode = false;
+//         scope.handleSave({value: scope.model});
+//       };
+//       scope.cancel = function() {
+//         scope.editMode = false;
+//         scope.model = previousValue;
+//         scope.handleCancel({value: scope.model});
+//       };
+//     },
+//     templateUrl: 'edit.html'
+//   };
 // });
 
-app.controller('UserInputCtrl', function($scope, $http, $httpParamSerializerJQLike){
-    $scope.userName = "";
-    $scope.userAge = "";
-    $scope.userHeight = "";
-    $scope.userWeight = "";
-    $scope.changeUserData = function() {
-      var userData = {
-          json: JSON.stringify({
-          name: $scope.userName,
-          age: $scope.userAge,
-          height: $scope.userHeight,
-          weight: $scope.userWeight
-        })};
-      $http({
-        url: '/runners.json',
-        method: 'POST',
-        data: $httpParamSerializerJQLike(userData),
-      }).then(function successCallback(response, status){
-        $scope.name = data[0].name;
-        $scope.age = data[0].age;
-        $scope.height = data[0].height;
-        $scope.weight = data[0].weight;
-      })
-    }
-})
+
+
+
+
+
+
+//printing JSON runner information
+// app.controller('UserInputCtrl', function($scope, $http, $httpParamSerializerJQLike){
+//     $scope.userName = "";
+//     $scope.userAge = "";
+//     $scope.userHeight = "";
+//     $scope.userWeight = "";
+//     $scope.changeUserData = function() {
+//       var userData = {
+//           json: JSON.stringify({
+//           name: $scope.userName,
+//           age: $scope.userAge,
+//           height: $scope.userHeight,
+//           weight: $scope.userWeight
+//         })};
+//       $http({
+//         url: '/runners.json',
+//         method: 'POST',
+//         data: $httpParamSerializerJQLike(userData),
+//       }).then(function successCallback(response, status){
+//         $scope.name = data[0].name;
+//         $scope.age = data[0].age;
+//         $scope.height = data[0].height;
+//         $scope.weight = data[0].weight;
+//       })
+//     }
+// })
 //printin JSON run information
 app.controller('RunCtrl', function($scope, $http) {
   $http.get('runs.json').success(function(data) {
@@ -130,7 +200,6 @@ app.controller('DemoCtrl', function($http, $scope) {
          $scope.dayFiveForecast = response.data.list[36].weather[0].description;
       }).
       catch(function(response) {
-        // wc.data = response.data;
       });
   }
 });
@@ -148,11 +217,3 @@ function initMap() {
           map: map
         });
       }
-
-//pretty printing JSON
-app.filter('prettyJSON', function () {
-  function prettyPrintJson(json) {
-      return JSON ? JSON.stringify(json, null, '  ') : 'your browser doesnt support JSON so cant pretty print';
-  }
-      return prettyPrintJson;
-});
